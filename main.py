@@ -50,14 +50,14 @@ def output(datas : list):
         print(i)
 
 def generate_output_file(filename: str, extension: str, directory: str = 'output'):
-    file = "%s.%s"%(filename, extension)
+    file =("%s.%s"%(filename, extension))
     print("file : %s"%(file))
 
     cwd = os.getcwd()
-    print("cwd : %s"%(cwd))
+    print("file : %s"%(cwd))
 
     dir = os.path.join(cwd,directory)
-    print("dir : %s"%(dir))
+    print("file : %s"%(dir))
 
     is_directory_exist = os.path.exists(dir)
 
@@ -65,15 +65,15 @@ def generate_output_file(filename: str, extension: str, directory: str = 'output
         os.mkdir(dir)
 
     path = os.path.join(cwd,directory,file)
-    print(path)
+    print("file : %s"%(path))
 
     with open(path, 'a') as file:
         return file
-    
+
 def generate_data(result, filename):
     directory, csv, excel = 'output', 'csv', 'xlsx' 
 
-    # generating csv and excel files
+    # generating csv and excel filess
     generate_output_file(filename, csv, directory)
     generate_output_file(filename, excel, directory)
 
